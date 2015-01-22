@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no")
+    title Stammformen 2.0
+  
+    link(href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css')
+    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel="stylesheet", type="text/css", href="assets/css/main.css")
+  body
+
+    .start.slide-in
+      h1.hero Stammformen 2.0
+      a.btn.go Go
+
+    .game.dpn
+  
+      i.btn.fa.fa-cog
+      i.btn.fa.fa-info-circle
+      //i.btn.fa.fa-bar-chart
+
+      h1.infinitiv
+      form#form.awesome-form
+      
+        .input-group
+          input.first(type="text")
+          label.label-1
+        
+        .input-group
+          input.second(type="text")
+          label.label-2
+        
+        .input-group
+          input.third(type="text")
+          label.label-3
+
+        br
+
+        input.btn.submit(type="button", value="Check")
+
+    .overlay.dpn
+    .settings.dpn
+      h1 Welche Lektionen willst du lernen?
+      ul.lektionen
+
+    .info.dpn
+      h1 Hinweise
+      p Wenn es die entsprechende Stammform nicht gibt einfach - eingeben. Auch bei Deponentien.
+
+  
+    script(src="bower_components/jquery/dist/jquery.min.js")
+    script(src="assets/js/main.js")
