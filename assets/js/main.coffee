@@ -30,6 +30,7 @@ newQ = ->
   $('.label-3').html('Dritte Stammform')
 
   $('.input-group > input').val('')
+  $('.input-group > input').removeClass "has-value"
 
   $('.infinitiv').addClass('pop')
   setTimeout ->
