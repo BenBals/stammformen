@@ -76,6 +76,7 @@ newQ = function() {
   $('.label-1').html('Erste Stammform');
   $('.label-2').html('Zweite Stammform');
   $('.label-3').html('Dritte Stammform');
+  $('.input-group > input').val('');
   $('.infinitiv').addClass('pop');
   setTimeout(function() {
     return $('.infinitiv').removeClass('pop');

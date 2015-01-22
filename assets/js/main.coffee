@@ -29,6 +29,8 @@ newQ = ->
   $('.label-2').html('Zweite Stammform')
   $('.label-3').html('Dritte Stammform')
 
+  $('.input-group > input').val('')
+
   $('.infinitiv').addClass('pop')
   setTimeout ->
     $('.infinitiv').removeClass('pop')
