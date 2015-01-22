@@ -93,7 +93,8 @@ input {
     color: #aaa; }
 
 .lektionen {
-  list-style: none; }
+  list-style: none;
+  padding: 0px; }
 
 .lektionen > li:hover {
   cursor: pointer; }
@@ -125,7 +126,7 @@ input {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.5);
-  padding: 50px;
+  padding: 1em;
   height: 50%;
   overflow-y: scroll; }
 

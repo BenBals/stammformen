@@ -119,6 +119,12 @@ $('html').click (e) ->
     $('.info').fadeOut('fast')
     $('.overlay').fadeOut('fast')
 
+$('.fa-times-circle').click ->
+  console.log 'click fa-times-circle'
+  $('.settings').fadeOut('fast')
+  $('.info').fadeOut('fast')
+  $('.overlay').fadeOut('fast')
+
 $('.fa-cog').click ->
   $('.settings').fadeIn('fast')
   $('.overlay').fadeIn('fast')

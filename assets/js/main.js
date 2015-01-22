@@ -172,6 +172,13 @@ $('html').click(function(e) {
   }
 });
 
+$('.fa-times-circle').click(function() {
+  console.log('click fa-times-circle');
+  $('.settings').fadeOut('fast');
+  $('.info').fadeOut('fast');
+  return $('.overlay').fadeOut('fast');
+});
+
 $('.fa-cog').click(function() {
   var key, val;
   $('.settings').fadeIn('fast');
