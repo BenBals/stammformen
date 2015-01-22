@@ -29,8 +29,10 @@ newQ = ->
   $('.label-2').html('Zweite Stammform')
   $('.label-3').html('Dritte Stammform')
 
-  $('.input-group > input').val('')
+  $('.input-group > input').val ''
   $('.input-group > input').removeClass "has-value"
+  $('.input-group > input').css('border-bottom', 'solid 2px #21a1e1')
+
 
   $('.infinitiv').addClass('pop')
   setTimeout ->
