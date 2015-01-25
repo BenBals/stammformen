@@ -34,6 +34,14 @@ body
   padding: 12px 14px
   margin: 0px 10px
 
+.btn-line
+  color: $blue
+  display: block
+  margin: 5px 0px
+  &:hover
+    cursor: pointer
+
+
 .dpn
   display: none
 
@@ -116,7 +124,7 @@ input
 .pop
   +animation(pop .5s)
 
-.settings, .info
+.settings, .info, .stats
   background-color: white
   color: $blue
   position: fixed
@@ -128,6 +136,7 @@ input
   padding: 1em
   height: 50%
   overflow-y: scroll
+  min-width: 50%
 
 .slide-in
   +animation(slide-in .5s)

@@ -18,7 +18,7 @@ html
   
       i.btn.fa.fa-cog
       i.btn.fa.fa-info-circle
-      //i.btn.fa.fa-bar-chart
+      i.btn.fa.fa-bar-chart
 
       h1.infinitiv
       form#form.awesome-form
@@ -42,13 +42,25 @@ html
     .overlay.dpn
     .settings.dpn
       i.btn.fa.fa-times-circle
-      h1 Welche Lektionen willst du lernen?
-      ul.lektionen
+      br
+      a.btn-line.learn_wrongs Nur Falschbeantwortete lernen
+      a.btn-line.reset_wrongs Falschbeantwortete zurücksetzen
+      a.btn-line.learn_normal.dpn Normal lernen
+      .normal
+        h3 Welche Lektionen willst du lernen?
+        ul.lektionen
 
     .info.dpn
       i.btn.fa.fa-times-circle
       h1 Hinweise
       p Wenn es die entsprechende Stammform nicht gibt einfach - eingeben. Auch bei Deponentien.
+
+    .stats.dpn
+      i.btn.fa.fa-times-circle
+      h1 Statistik
+      div
+        | Gesamtpunkte: 
+        span.stammpoints
 
   
     script(src="bower_components/jquery/dist/jquery.min.js")

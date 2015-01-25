@@ -31,6 +31,13 @@ body {
   padding: 12px 14px;
   margin: 0px 10px; }
 
+.btn-line {
+  color: #21a1e1;
+  display: block;
+  margin: 5px 0px; }
+  .btn-line:hover {
+    cursor: pointer; }
+
 .dpn {
   display: none; }
 
@@ -113,7 +120,7 @@ input {
   -moz-animation: pop 0.5s;
   animation: pop 0.5s; }
 
-.settings, .info {
+.settings, .info, .stats {
   background-color: white;
   color: #21a1e1;
   position: fixed;
@@ -128,7 +135,8 @@ input {
   box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.5);
   padding: 1em;
   height: 50%;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  min-width: 50%; }
 
 .slide-in {
   -webkit-animation: slide-in 0.5s;

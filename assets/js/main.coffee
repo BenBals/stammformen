@@ -1,8 +1,15 @@
 selection = []
 lektionen = []
 currQ = {}
+wrongs = []
+all_data = []
 
 random = (from, to) -> Math.floor((Math.random()*to)+from)
+
+if localStorage.stammpoints == undefined
+  localStorage.stammpoints = 0
+  $('.stammpoints').html(localStorage.stammpoints)
+
 
 add_lektion = (n) ->
   n = parseInt n
@@ -13,16 +20,90 @@ add_lektion = (n) ->
 add_lektionen = ->
   selection = []
   for i in lektionen
-    console.log i
     add_lektion(i)
 
-remove_lektion = (n) ->
-  if lektionen.indexOf(n) > -1
-    lektionen.splice(lektionen.indexOf(n), 1)
-    add_lektionen()
+add_points = (n) ->
+  if n == undefined
+    localStorage.stammpoints = parseInt(localStorage.stammpoints) + 1
+  else
+    localStorage.stammpoints = parseInt(localStorage.stammpoints) + n
 
-  
+  $('.stammpoints').html(localStorage.stammpoints)
 
+add_wrong = (n) ->
+  if wrongs.indexOf(n) == -1
+    wrongs.push(parseInt(n))
+    save_wrongs()
+
+check = ->
+  console.log 'lets see what you got there'
+
+  __first__ = $('.first').val().toLowerCase().trim()
+  __second__ = $('.second').val().toLowerCase().trim()
+  __third__ = $('.third').val().toLowerCase().trim()
+
+  __right__ = 0
+
+  if __first__ == currQ.first
+    $('.first').css('border-bottom', 'solid 2px #4CD964')
+    $('.label-1').html('Richtig')
+    add_points()
+    __right__++
+  else
+    $('.first').css('border-bottom', 'solid 2px #FF3B30')
+    $('.label-1').html(currQ.first)
+
+  if __second__ == currQ.second
+    $('.second').css('border-bottom', 'solid 2px #4CD964')
+    $('.label-2').html('Richtig')
+    add_points()
+    __right__++
+  else
+    $('.second').css('border-bottom', 'solid 2px #FF3B30')
+    $('.label-2').html(currQ.second)
+
+  if __third__ == currQ.third
+    $('.third').css('border-bottom', 'solid 2px #4CD964')
+    $('.label-3').html('Richtig')
+    add_points()
+    __right__++
+  else
+    $('.third').css('border-bottom', 'solid 2px #FF3B30')
+    $('.label-3').html(currQ.third)
+
+    if __right__ == 3
+      console.log 'alles Richtig'
+      remove_wrong(all_data.indexOf(currQ.raw))
+    else
+      add_wrong(all_data.indexOf(currQ.raw))
+
+  setTimeout ->
+    newQ()
+  , 5000
+
+learn_wrongs = () ->
+  selection = []
+  for i in wrongs
+    selection.push all_data[i]
+
+li_listeners = ->
+  $('.active').off()
+  $('.inactive').off()
+
+  $('.active').click ->
+    console.log 'click on active'
+    remove_lektion(parseInt($(this).data('lektion')))
+    $(this).removeClass('active')
+    $(this).addClass('inactive')
+    li_listeners()
+
+  $('.inactive').click ->
+    console.log 'click on inactive'
+    console.log 'add_lektion', parseInt($(this).data('lektion'))
+    add_lektion(parseInt($(this).data('lektion')))
+    $(this).addClass('active')
+    $(this).removeClass('inactive')
+    li_listeners()
 
 newQ = ->
   $('.label-1').html('Erste Stammform')
@@ -54,39 +135,25 @@ newQ = ->
 
   $('.infinitiv').html(currQ.inf)
 
-check = ->
-  console.log 'lets see what you got there'
+remove_lektion = (n) ->
+  if lektionen.indexOf(n) > -1
+    lektionen.splice(lektionen.indexOf(n), 1)
+    add_lektionen()
 
-  __first__ = $('.first').val().toLowerCase()
-  __second__ = $('.second').val().toLowerCase()
-  __third__ = $('.third').val().toLowerCase()
+remove_wrong = (n) ->
+  if wrongs.indexOf(parseInt(n)) != -1
+    wrongs.splice(wrongs.indexOf(parseInt(n)), 1)
+    save_wrongs()
 
-  if __first__ == currQ.first
-    $('.first').css('border-bottom', 'solid 2px #4CD964')
-    $('.label-1').html('Richtig')
-  else
-    $('.first').css('border-bottom', 'solid 2px #FF3B30')
-    $('.label-1').html(currQ.first)
+save_wrongs = () ->
+  localStorage.wrongs = ''
+  for i in wrongs
+    if localStorage.wrongs == ''
+      localStorage.wrongs += i
+    else
+      localStorage.wrongs += (',' + i)
 
-  if __second__ == currQ.second
-    $('.second').css('border-bottom', 'solid 2px #4CD964')
-    $('.label-2').html('Richtig')
-  else
-    $('.second').css('border-bottom', 'solid 2px #FF3B30')
-    $('.label-2').html(currQ.second)
-
-  if __third__ == currQ.third
-    $('.third').css('border-bottom', 'solid 2px #4CD964')
-    $('.label-3').html('Richtig')
-  else
-    $('.third').css('border-bottom', 'solid 2px #FF3B30')
-    $('.label-3').html(currQ.third)
-
-  setTimeout ->
-    newQ()
-  , 5000
-
-  
+  true
 
 $ ->
   $('.start').addClass('slide-in')
@@ -104,6 +171,16 @@ $ ->
   # while dev
   for key, val of data
     add_lektion(key)
+    all_data = all_data.concat val
+
+  if localStorage.wrongs == undefined
+    localStorage.wrongs = ''
+    wrongs = []
+  else
+    for i in localStorage.wrongs.split(',')
+      if i != ''
+        wrongs.push(parseInt(i))
+  
 
 $('.go').click ->
   $('.start').addClass('slide-out')
@@ -122,17 +199,29 @@ $('html').click (e) ->
   if e.target == $('.overlay')[0]
     $('.settings').fadeOut('fast')
     $('.info').fadeOut('fast')
+    $('.stats').fadeOut('fast')
     $('.overlay').fadeOut('fast')
 
 $('.fa-times-circle').click ->
   console.log 'click fa-times-circle'
   $('.settings').fadeOut('fast')
   $('.info').fadeOut('fast')
+  $('.stats').fadeOut('fast')
   $('.overlay').fadeOut('fast')
 
 $('.fa-cog').click ->
   $('.settings').fadeIn('fast')
   $('.overlay').fadeIn('fast')
+
+  if localStorage.wrongs == ''
+    $('.learn_wrongs').css 'display', 'none'
+    $('.reset_wrongs').css 'display', 'none'
+    $('.learn_normal').css 'display', 'none'
+  else
+    $('.learn_wrongs').css 'display', 'block'
+    $('.reset_wrongs').css 'display', 'block'
+  
+  $('.lektionen').html('')
 
   for key, val of data
     key = parseInt(key)
@@ -143,33 +232,33 @@ $('.fa-cog').click ->
 
   li_listeners()
 
-
-li_listeners = ->
-  $('.active').off()
-  $('.inactive').off()
-
-  $('.active').click ->
-    console.log 'click on active'
-    remove_lektion(parseInt($(this).data('lektion')))
-    $(this).removeClass('active')
-    $(this).addClass('inactive')
-    li_listeners()
-
-  $('.inactive').click ->
-    console.log 'click on inactive'
-    console.log 'add_lektion', parseInt($(this).data('lektion'))
-    add_lektion(parseInt($(this).data('lektion')))
-    $(this).addClass('active')
-    $(this).removeClass('inactive')
-    li_listeners()
-
-
-
-  
-
 $('.fa-info-circle').click ->
   $('.info').fadeIn('fast')
   $('.overlay').fadeIn('fast')
+  
+
+$('.fa-bar-chart').click ->
+  $('.stats').fadeIn('fast')
+  $('.overlay').fadeIn('fast')
+
+$('.learn_wrongs').click ->
+  $('.normal').fadeOut()
+  $('.learn_normal').fadeIn()
+  $('learn_wrongs').fadeOut()
+  learn_wrongs()
+
+$('.learn_normal').click ->
+  $('.normal').fadeIn()
+  add_lektionen()
+
+$('.reset_wrongs').click ->
+  wrongs = []
+  save_wrongs()
+  $('.normal').fadeIn()
+  $('.learn_wrongs').fadeOut()
+  $('.reset_wrongs').fadeOut()
+  add_lektionen()
+
 
 $('#form').submit(check)
 $('.submit').click(check)
