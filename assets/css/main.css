@@ -25,11 +25,14 @@ body {
     border: 2px solid transparent;
     border-bottom: 2px solid #21a1e1; }
 
-.btn.fa {
+.btn.fa, .btn-underline {
   border: none;
   border-bottom: 2px solid #21a1e1;
   padding: 12px 14px;
   margin: 0px 10px; }
+
+.btn-underline {
+  margin-top: 40px; }
 
 .btn-line {
   color: #21a1e1;
@@ -85,7 +88,7 @@ input {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
     font-style: italic;
     font-size: 18px;
     color: #999;
@@ -147,6 +150,9 @@ input {
   -webkit-animation: slide-out 0.5s;
   -moz-animation: slide-out 0.5s;
   animation: slide-out 0.5s; }
+
+.wrapper-settings {
+  margin-top: 100px; }
 
 @-webkit-keyframes slide-in {
   from {

@@ -28,11 +28,14 @@ body
     border: 2px solid rgba(0, 0, 0, 0)
     border-bottom: 2px solid $blue
 
-.btn.fa
+.btn.fa, .btn-underline
   border: none
   border-bottom: 2px solid $blue
   padding: 12px 14px
   margin: 0px 10px
+
+.btn-underline
+  margin-top: 40px
 
 .btn-line
   color: $blue
@@ -143,6 +146,9 @@ input
 
 .slide-out
   +animation(slide-out .5s)
+
+.wrapper-settings
+  margin-top: 100px
 
 +keyframes(slide-in)
   from

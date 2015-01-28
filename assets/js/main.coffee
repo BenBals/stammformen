@@ -6,16 +6,12 @@ all_data = []
 
 random = (from, to) -> Math.floor((Math.random()*to)+from)
 
-if localStorage.stammpoints == undefined
-  localStorage.stammpoints = 0
-  $('.stammpoints').html(localStorage.stammpoints)
-
-
 add_lektion = (n) ->
   n = parseInt n
   selection = selection.concat data[n]
   if lektionen.indexOf(n) == -1
     lektionen.push n
+  save_lektions()
 
 add_lektionen = ->
   selection = []
@@ -78,6 +74,7 @@ check = ->
       add_wrong(all_data.indexOf(currQ.raw))
 
   setTimeout ->
+    $(".first").focus()
     newQ()
   , 5000
 
@@ -85,6 +82,12 @@ learn_wrongs = () ->
   selection = []
   for i in wrongs
     selection.push all_data[i]
+
+load_lektions = ->
+  lektionen = []
+  for i in localStorage.lektionen.split(',')
+    lektionen.push(parseInt(i))
+  add_lektionen()
 
 li_listeners = ->
   $('.active').off()
@@ -118,7 +121,7 @@ newQ = ->
   $('.infinitiv').addClass('pop')
   setTimeout ->
     $('.infinitiv').removeClass('pop')
-  ,500
+  , 500
 
 
   currQ.id = random(0, selection.length)
@@ -139,27 +142,36 @@ remove_lektion = (n) ->
   if lektionen.indexOf(n) > -1
     lektionen.splice(lektionen.indexOf(n), 1)
     add_lektionen()
+    save_lektions()
 
 remove_wrong = (n) ->
   if wrongs.indexOf(parseInt(n)) != -1
     wrongs.splice(wrongs.indexOf(parseInt(n)), 1)
     save_wrongs()
 
+save_lektions = () ->
+  localStorage.lektionen = ''
+  for i in lektionen
+    if localStorage.lektionen == ''
+      localStorage.lektionen += String(i)
+    else
+      localStorage.lektionen += (',' + i)
+  true
+
 save_wrongs = () ->
   localStorage.wrongs = ''
   for i in wrongs
     if localStorage.wrongs == ''
-      localStorage.wrongs += i
+      localStorage.wrongs += String(i)
     else
-      localStorage.wrongs += (',' + i)
-
+      localStorage.wrongs += (',' + String(i))
   true
 
 $ ->
   $('.start').addClass('slide-in')
   setTimeout ->
     $('.start').removeClass('slide-in')
-  ,500
+  , 500
 
   $(".awesome-form .input-group input").focusout ->
     text_val = $(this).val()
@@ -168,9 +180,7 @@ $ ->
     else
       $(this).addClass "has-value"
 
-  # while dev
   for key, val of data
-    add_lektion(key)
     all_data = all_data.concat val
 
   if localStorage.wrongs == undefined
@@ -180,6 +190,18 @@ $ ->
     for i in localStorage.wrongs.split(',')
       if i != ''
         wrongs.push(parseInt(i))
+
+  if localStorage.lektionen != '' and localStorage.lektionen != undefined
+    load_lektions()
+  else
+    localStorage.lektionen = ''
+    for key, val of data
+      add_lektion(key)
+  
+
+  if localStorage.stammpoints == undefined
+    localStorage.stammpoints = 0
+    $('.stammpoints').html(localStorage.stammpoints)
   
 
 $('.go').click ->
@@ -191,8 +213,8 @@ $('.go').click ->
     $('.start').addClass('dpn')
     setTimeout ->
       $('.game').removeClass('slide-in')
-    ,500
-  ,500
+    , 500
+  , 500
   newQ()
 
 $('html').click (e) ->
@@ -201,6 +223,7 @@ $('html').click (e) ->
     $('.info').fadeOut('fast')
     $('.stats').fadeOut('fast')
     $('.overlay').fadeOut('fast')
+    newQ()
 
 $('.fa-times-circle').click ->
   console.log 'click fa-times-circle'
@@ -208,8 +231,9 @@ $('.fa-times-circle').click ->
   $('.info').fadeOut('fast')
   $('.stats').fadeOut('fast')
   $('.overlay').fadeOut('fast')
+  newQ()
 
-$('.fa-cog').click ->
+$('.fa-cog, .btn-settings').click ->
   $('.settings').fadeIn('fast')
   $('.overlay').fadeIn('fast')
 
@@ -244,7 +268,7 @@ $('.fa-bar-chart').click ->
 $('.learn_wrongs').click ->
   $('.normal').fadeOut()
   $('.learn_normal').fadeIn()
-  $('learn_wrongs').fadeOut()
+  $('.learn_wrongs').fadeOut()
   learn_wrongs()
 
 $('.learn_normal').click ->
@@ -260,5 +284,8 @@ $('.reset_wrongs').click ->
   add_lektionen()
 
 
-$('#form').submit(check)
+$('.input-group > input').on 'keydown', (e) ->
+  if e.which == 13
+    check()
+
 $('.submit').click(check)

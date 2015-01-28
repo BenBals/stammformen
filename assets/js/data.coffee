@@ -2,7 +2,7 @@ data =
   1: [
     'agere, ago, egi, actum'
     'audire, audio, audivi, auditum'
-    'esse, sum, fui, –'
+    'esse, sum, fui, -'
     'invenire, invenio, inveni, inventum'
     'iuvare, iuvo, iuvi, iutum'
     'ludere, ludo, lusi, lusum'
@@ -18,14 +18,14 @@ data =
     'cupere, cupio, cupivi, cupitum'
     'currere, curro, cucurri, cursum'
     'debere, debeo, debui, debitum'
-    'fugere, fugio, fugi, –'
+    'fugere, fugio, fugi, -'
     'habere, habeo, habui, habitum'
     'rapere, rapio, rapui, raptum'
     'ridere, rideo, risi, risum'
     'sumere, sumo, sumpsi, sumptum'
   ]
   3: [
-    'adesse, adsum, adfui, –'
+    'adesse, adsum, adfui, -'
     'capere, capio, cepi, captum'
     'considere, consido, consedi, consessum'
     'dicere, dico, dixi, dictum'
@@ -35,7 +35,7 @@ data =
     'legere, lego, legi, lectum'
     'monere, moneo, monui, monitum'
     'scribere, scribo, scripsi, scriptum'
-    'timere, timeo, timui, –'
+    'timere, timeo, timui, -'
   ]
   4: [
     'accedere, accedo, accessi, accessum'
@@ -47,7 +47,7 @@ data =
     'tangere, tango, tetigi, tactum'
   ]
   5: [
-    'cadere, cado, cecidi, – fallen'
+    'cadere, cado, cecidi, - fallen'
     'caedere, caedo, cecidi, caesum'
     'condere, condo, condidi, conditum'
     'facere, facio, feci, factum'
@@ -62,30 +62,30 @@ data =
   ]
   7: [
       'amittere, amitto, amisi, amissum'
-      'canere, cano, cecini, –'
+      'canere, cano, cecini, -'
       'contendere, contendo, contendi, contentum'
       'crescere, cresco, crevi, cretum'
-      'iacere, iaceo, iacui, –'
+      'iacere, iaceo, iacui, -'
       'mittere, mitto, misi, missum'
       'petere, peto, petivi, petitum'
       'scire, scio, scivi, scitum'
       'sinere, sino, sivi, situm'
       'surgere, surgo, surrexi, surrectum'
       'vincere, vinco, vici, victum'
-      'vivere, vivo, vixi, –'
+      'vivere, vivo, vixi, -'
   ]
   8: [
       'alere, alo, alui, altum'
       'arcessere, arcesso, arcessivi, arcessitum'
       'confidere, confido, confisus sum, -'
       'consulere, consulo, consului, consultum'
-      'deesse, desum, defui, –'
+      'deesse, desum, defui, -'
       'defendere, defendo, defendi, defensum'
       'favere, faveo, favi, fautum'
       'iubere, iubeo, iussi, iussum'
       'recipere, recipio, recepi, receptum'
       'tradere, trado, tradidi, traditum'
-      'valere, valeo, valui, –'
+      'valere, valeo, valui, -'
       'vendere, vendo, vendidi, venditum'
   ]
   9: [
@@ -97,23 +97,23 @@ data =
       'reperire, reperio, repperi, repertum'
   ]
   10: [
-      'apparere, appareo, apparui, –'
-      'consistere, consisto, constiti, –'
+      'apparere, appareo, apparui, -'
+      'consistere, consisto, constiti, -'
       'credere, credo, credidi, creditum'
       'custodire, custodio, custodivi, custoditum'
       'decipere, decipio, decepi, deceptum'
       'frangere, frango, fregi, fractum'
-      'manere, maneo, mansi, –'
+      'manere, maneo, mansi, -'
       'minuere, minuo, minui, minutum'
-      'parere, pareo, parui, –'
+      'parere, pareo, parui, -'
       'punire, punio, punivi, punitum'
       'relinquere, relinquo, reliqui, relictum'
       'removere, removeo, removi, remotum'
-      'stare, sto, steti, –'
+      'stare, sto, steti, -'
       'trahere, traho, traxi, tractum'
   ]
   11: [
-      'accidere, accido, accidi, –'
+      'accidere, accido, accidi, -'
       'praebere, praebeo, praebui, praebitum'
       'tenere, teneo, tenui, tentum'
   ]
@@ -134,7 +134,7 @@ data =
       'aspicere, aspicio, aspexi, aspectum'
       'movere, moveo, movi, motum'
       'neglegere, neglego, neglexi, neglectum'
-      'pendere, pendeo, pependi, –'
+      'pendere, pendeo, pependi, -'
       'perterrere, perterreo, perterrui, -'
       'reddere, reddo, reddidi, redditum'
   ]
@@ -146,13 +146,13 @@ data =
       'imponere, impono, imposui, impositum'
       'incendere, incendo, incendi, incensum'
       'interficere, interficio, interfeci, interfectum'
-      'metuere, metuo, metui, –'
+      'metuere, metuo, metui, -'
       'perficere, perficio, perfeci, perfectum'
   ]
   15: [
       'constituere, constituo, constitui, constitutum'
       'edere, edo, edidi, editum'
-      'imminere, immineo, –, –'
+      'imminere, immineo, -, -'
       'instituere, instituo, institui, institutum'
       'parere, pario, peperi, partum'
       'prohibere, prohibeo, prohibui, prohibitum'
@@ -160,28 +160,28 @@ data =
       'tendere, tendo, tetendi, tentum'
   ]
   16: [
-      'carere, careo, carui, –'
+      'carere, careo, carui, -'
       'delere, deleo, delevi, deletum'
-      'dolere, doleo, dolui, –'
+      'dolere, doleo, dolui, -'
       'persuadere, persuadeo, persuasi, persuasum'
       'redire, redeo, redii, reditum'
-      'velle, volo, volui, –'
+      'velle, volo, volui, -'
   ]
   17: [
       'commovere, commoveo, commovi, commotum'
       'convenire, convenio, conveni, conventum'
-      'effugere, effugio, effugi, –'
+      'effugere, effugio, effugi, -'
       'invadere, invado, invasi, invasum'
       'munire, munio, munivi, munitum'
-      'resistere, resisto, restiti, –'
+      'resistere, resisto, restiti, -'
   ]
   18: [
-      'abesse, absum, afui, –'
+      'abesse, absum, afui, -'
       'cedere, cedo, cessi, cessum'
       'cernere, cerno, crevi, cretum'
-      'descendere, descendo, descendi, –'
+      'descendere, descendo, descendi, -'
       'gerere, gero, gessi, gestum'
-      'patere, pateo, patui, –'
+      'patere, pateo, patui, -'
       'providere, provideo, providi, provisum'
   ]
   19: [
@@ -225,7 +225,7 @@ data =
       'educere, educo, eduxi, eductum'
       'mirari, miror, miratus sum sich'
       'pellere, pello, pepuli, pulsum'
-      'perire, pereo, perii, –'
+      'perire, pereo, perii, -'
       'permittere, permitto, permisi, permissum'
       'polliceri, polliceor, pollicitus sum, -'
       'ponere, pono, posui, positum'
@@ -237,7 +237,7 @@ data =
       'adimere, adimo, ademi, ademptum'
       'admonere, admoneo, admonui, admonitum'
       'comperire, comperio, comperi, compertum'
-      'egere, egeo, egui, –'
+      'egere, egeo, egui, -'
       'mori, morior, mortuus sum'
   ]
   24: [
@@ -248,10 +248,10 @@ data =
       'iungere, iungo, iunxi, iunctum'
       'morari, moror, moratus sum'
       'nocere, noceo, nocui, nocitum'
-      'parcere, parco, peperci, –'
+      'parcere, parco, peperci, -'
       'pati, patior, passus sum'
-      'poscere, posco, poposci, –'
-      'praestare, praesto, praestiti, –'
+      'poscere, posco, poposci, -'
+      'praestare, praesto, praestiti, -'
       'subicere, subicio, subieci, subiectum'
   ]
   25: [
@@ -263,7 +263,7 @@ data =
       'disserere, dissero, disserui, dissertum'
       'fateri, fateor, fassus sum'
       'mentiri, mentior, mentitus sum'
-      'nescire, nescio, nescivi, –'
+      'nescire, nescio, nescivi, -'
       'obicere, obicio, obieci, obiectum'
       'sentire, sentio, sensi, sensum'
       'versari, versor, versatus sum'
@@ -272,12 +272,12 @@ data =
       'consentire, consentio, consensi, consensum'
       'corrumpere, corrumpo, corrupi, corruptum'
       'dedere, dedo, dedidi, deditum'
-      'desistere, desisto, destiti, –'
+      'desistere, desisto, destiti, -'
       'eligere, eligo, elegi, electum'
       'evenire, evenio, eveni, eventum'
-      'instare, insto, institi, –'
+      'instare, insto, institi, -'
       'invidere, invideo, invidi, invisum'
-      'studere, studeo, studui, –'
+      'studere, studeo, studui, -'
       'uti, utor, usus sum'
   ]
   27: [
@@ -295,11 +295,11 @@ data =
   ]
   28: [
       'decet, decuit, -, -'
-      'discere, disco, didici, –'
+      'discere, disco, didici, -'
       'eripere, eripio, eripui, ereptum'
       'nasci, nascor, natus sum'
       'novisse, novi, notum'
-      'praeesse, praesum,praefui, –'
+      'praeesse, praesum,praefui, -'
       'precari, precor, precatus sum'
       'rumpere, rumpo, rupi, ruptum'
   ]
@@ -312,12 +312,12 @@ data =
       'dimittere, dimitto, dimisi, dimissum'
       'iacere, iacio, ieci, iactum'
       'ingredi, ingredior, ingressus sum'
-      'interesse, intersum, interfui, –'
-      'obstare, obsto, obstiti, –'
+      'interesse, intersum, interfui, -'
+      'obstare, obsto, obstiti, -'
       'praemittere, praemitto, praemisi, praemissum'
   ]
   30: [
-      'ardere, ardeo, arsi, –'
+      'ardere, ardeo, arsi, -'
       'avertere, averto, averti, aversum'
       'componere, compono, composui, compositum'
       'conscribere, conscribo, conscripsi, conscriptum'
