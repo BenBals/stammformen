@@ -27,6 +27,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+	"\/assets\/images\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 271567,
+		"inputAbbreviatedPath": "\/assets\/images\/icon.png",
+		"outputAbbreviatedPath": "\/assets\/images\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/js\/data.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
@@ -48,6 +59,17 @@
 		"inputAbbreviatedPath": "\/assets\/js\/main.coffee",
 		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/assets\/js\/main.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/main.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/main.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/main-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -987,15 +1009,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
-		},
-	"\/index.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/index.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/index.jade": {
 		"compileDebug": 1,
