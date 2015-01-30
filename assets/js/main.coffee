@@ -201,41 +201,43 @@ $ ->
 
   if localStorage.stammpoints == undefined
     localStorage.stammpoints = 0
-    $('.stammpoints').html(localStorage.stammpoints)
+    localStorage.stammpoints_wrongs = 0
+  $('.stammpoints_wrongs').html localStorage.stammpoints_wrongs
+  $('.stammpoints').html localStorage.stammpoints
   
 
 $('.go').click ->
-  $('.start').addClass('slide-out')
+  $('.start').addClass 'slide-out'
   setTimeout ->
-    $('.game').addClass('slide-in')
-    $('.game').removeClass('dpn')
-    $('.start').removeClass('slide-out')
-    $('.start').addClass('dpn')
+    $('.game').addClass 'slide-in'
+    $('.game').removeClass 'dpn'
+    $('.start').removeClass 'slide-out'
+    $('.start').addClass 'dpn'
     setTimeout ->
-      $('.game').removeClass('slide-in')
+      $('.game').removeClass 'slide-in'
     , 500
   , 500
   newQ()
 
 $('html').click (e) ->
   if e.target == $('.overlay')[0]
-    $('.settings').fadeOut('fast')
-    $('.info').fadeOut('fast')
-    $('.stats').fadeOut('fast')
-    $('.overlay').fadeOut('fast')
+    $('.settings').fadeOut 'fast'
+    $('.info').fadeOut 'fast'
+    $('.stats').fadeOut 'fast'
+    $('.overlay').fadeOut 'fast'
     newQ()
 
 $('.icons8-close').click ->
   console.log 'click fa-times-circle'
-  $('.settings').fadeOut('fast')
-  $('.info').fadeOut('fast')
-  $('.stats').fadeOut('fast')
-  $('.overlay').fadeOut('fast')
+  $('.settings').fadeOut 'fast'
+  $('.info').fadeOut 'fast'
+  $('.stats').fadeOut 'fast'
+  $('.overlay').fadeOut 'fast'
   newQ()
 
 $('.icons8-settings, .btn-settings').click ->
-  $('.settings').fadeIn('fast')
-  $('.overlay').fadeIn('fast')
+  $('.settings').fadeIn 'fast'
+  $('.overlay').fadeIn 'fast'
 
   if localStorage.wrongs == ''
     $('.learn_wrongs').css 'display', 'none'
@@ -245,7 +247,7 @@ $('.icons8-settings, .btn-settings').click ->
     $('.learn_wrongs').css 'display', 'block'
     $('.reset_wrongs').css 'display', 'block'
   
-  $('.lektionen').html('')
+  $('.lektionen').html ''
 
   for key, val of data
     key = parseInt(key)

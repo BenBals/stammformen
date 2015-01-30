@@ -284,8 +284,10 @@ $(function() {
   }
   if (localStorage.stammpoints === void 0) {
     localStorage.stammpoints = 0;
-    return $('.stammpoints').html(localStorage.stammpoints);
+    localStorage.stammpoints_wrongs = 0;
   }
+  $('.stammpoints_wrongs').html(localStorage.stammpoints_wrongs);
+  return $('.stammpoints').html(localStorage.stammpoints);
 });
 
 $('.go').click(function() {
