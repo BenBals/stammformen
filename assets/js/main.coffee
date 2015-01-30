@@ -99,6 +99,7 @@ li_listeners = ->
     $(this).removeClass('active')
     $(this).addClass('inactive')
     li_listeners()
+    newQ()
 
   $('.inactive').click ->
     console.log 'click on inactive'
@@ -107,6 +108,7 @@ li_listeners = ->
     $(this).addClass('active')
     $(this).removeClass('inactive')
     li_listeners()
+    newQ()
 
 newQ = ->
   $('.label-1').html('Erste Stammform')
@@ -121,7 +123,7 @@ newQ = ->
   $('.infinitiv').addClass('pop')
   setTimeout ->
     $('.infinitiv').removeClass('pop')
-  , 500
+  , 300
 
 
   currQ.id = random(0, selection.length)
@@ -225,7 +227,6 @@ $('html').click (e) ->
     $('.info').fadeOut 'fast'
     $('.stats').fadeOut 'fast'
     $('.overlay').fadeOut 'fast'
-    newQ()
 
 $('.icons8-close').click ->
   console.log 'click fa-times-circle'
@@ -233,7 +234,6 @@ $('.icons8-close').click ->
   $('.info').fadeOut 'fast'
   $('.stats').fadeOut 'fast'
   $('.overlay').fadeOut 'fast'
-  newQ()
 
 $('.icons8-settings, .btn-settings').click ->
   $('.settings').fadeIn 'fast'
@@ -276,6 +276,7 @@ $('.learn_wrongs').click ->
 $('.learn_normal').click ->
   $('.normal').fadeIn()
   add_lektionen()
+  newQ()
 
 $('.reset_wrongs').click ->
   wrongs = []
@@ -284,6 +285,7 @@ $('.reset_wrongs').click ->
   $('.learn_wrongs').fadeOut()
   $('.reset_wrongs').fadeOut()
   add_lektionen()
+  newQ()
 
 
 $('.input-group > input').on 'keydown', (e) ->

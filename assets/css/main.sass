@@ -136,7 +136,7 @@ input
   opacity: .5
 
 .pop
-  +animation(pop .5s)
+  +animation(pop .3s ease-in-out)
 
 .settings, .info, .stats
   background-color: white
@@ -181,8 +181,8 @@ input
 
 +keyframes(pop)
   0%
-    +transition(scale(1))
+    +transform(scale(1))
   80%
-    +transition(scale(1.2))
+    +transform(scale(1.2))
   100%
-    +transition(scale(1))
+    +transform(scale(1))
