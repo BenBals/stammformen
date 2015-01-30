@@ -3,7 +3,7 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no")
-    link(rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon")
+    link(rel="shortcut icon" href="assets/images/logo/logo.png" type="image/png")
     title Stammformen 2.0
   
     link(href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css')
@@ -12,7 +12,7 @@ html
   body
 
     .start.slide-in
-      img.hero-img(src="assets/images/icon.svg", alt="")
+      img.hero-img(src="assets/images/logo/logo.svg", alt="")
       br
       a.btn.go Go
       br
@@ -20,10 +20,11 @@ html
         a.btn.btn-underline.btn-settings Einstellungen
 
     .game.dpn
-  
-      i.btn.fa.fa-cog
-      i.btn.fa.fa-info-circle
-      i.btn.fa.fa-bar-chart
+
+      .icon-wrapper
+        i.btn.icon.icons8-settings
+        i.btn.icon.icons8-info
+        i.btn.icon.icons8-line_chart
 
       h1.infinitiv
       form#form.awesome-form
@@ -46,7 +47,7 @@ html
 
     .overlay.dpn
     .settings.dpn
-      i.btn.fa.fa-times-circle
+      i.btn.icon.icons8-close
       br
       a.btn-line.learn_wrongs Nur Falschbeantwortete lernen
       a.btn-line.reset_wrongs Falschbeantwortete zurücksetzen
@@ -56,12 +57,15 @@ html
         ul.lektionen
 
     .info.dpn
-      i.btn.fa.fa-times-circle
+      i.btn.icon.icons8-close
       h1 Hinweise
       p Wenn es die entsprechende Stammform nicht gibt einfach - eingeben. Auch bei Deponentien.
+      p Alle Icons sind von 
+        a(href="http://icons8.com/", target="_blank") Icons8
+        | . Vielen Dank dafür, dass ich die Icons (die sonst 250€ kosten) gratis verwenden darf.
 
     .stats.dpn
-      i.btn.fa.fa-times-circle
+      i.btn.icon.icons8-close
       h1 Statistik
       div
         | Gesamtpunkte: 

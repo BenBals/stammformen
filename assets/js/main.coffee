@@ -41,30 +41,30 @@ check = ->
   __right__ = 0
 
   if __first__ == currQ.first
-    $('.first').css('border-bottom', 'solid 2px #4CD964')
+    $('.first').css('border-bottom', 'solid 1px #4CD964')
     $('.label-1').html('Richtig')
     add_points()
     __right__++
   else
-    $('.first').css('border-bottom', 'solid 2px #FF3B30')
+    $('.first').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-1').html(currQ.first)
 
   if __second__ == currQ.second
-    $('.second').css('border-bottom', 'solid 2px #4CD964')
+    $('.second').css('border-bottom', 'solid 1px #4CD964')
     $('.label-2').html('Richtig')
     add_points()
     __right__++
   else
-    $('.second').css('border-bottom', 'solid 2px #FF3B30')
+    $('.second').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-2').html(currQ.second)
 
   if __third__ == currQ.third
-    $('.third').css('border-bottom', 'solid 2px #4CD964')
+    $('.third').css('border-bottom', 'solid 1px #4CD964')
     $('.label-3').html('Richtig')
     add_points()
     __right__++
   else
-    $('.third').css('border-bottom', 'solid 2px #FF3B30')
+    $('.third').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-3').html(currQ.third)
 
     if __right__ == 3
@@ -115,7 +115,7 @@ newQ = ->
 
   $('.input-group > input').val ''
   $('.input-group > input').removeClass "has-value"
-  $('.input-group > input').css('border-bottom', 'solid 2px #21a1e1')
+  $('.input-group > input').css('border-bottom', 'solid 1px #21a1e1')
 
 
   $('.infinitiv').addClass('pop')
@@ -225,7 +225,7 @@ $('html').click (e) ->
     $('.overlay').fadeOut('fast')
     newQ()
 
-$('.fa-times-circle').click ->
+$('.icons8-close').click ->
   console.log 'click fa-times-circle'
   $('.settings').fadeOut('fast')
   $('.info').fadeOut('fast')
@@ -233,7 +233,7 @@ $('.fa-times-circle').click ->
   $('.overlay').fadeOut('fast')
   newQ()
 
-$('.fa-cog, .btn-settings').click ->
+$('.icons8-settings, .btn-settings').click ->
   $('.settings').fadeIn('fast')
   $('.overlay').fadeIn('fast')
 
@@ -256,12 +256,12 @@ $('.fa-cog, .btn-settings').click ->
 
   li_listeners()
 
-$('.fa-info-circle').click ->
+$('.icons8-info').click ->
   $('.info').fadeIn('fast')
   $('.overlay').fadeIn('fast')
   
 
-$('.fa-bar-chart').click ->
+$('.icons8-line_chart').click ->
   $('.stats').fadeIn('fast')
   $('.overlay').fadeIn('fast')
 
