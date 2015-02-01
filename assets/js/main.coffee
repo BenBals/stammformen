@@ -206,6 +206,25 @@ $ ->
     localStorage.stammpoints_wrongs = 0
   $('.stammpoints_wrongs').html localStorage.stammpoints_wrongs
   $('.stammpoints').html localStorage.stammpoints
+
+  if localStorage.total_time == undefined
+    localStorage.total_time = 0
+
+  setInterval ->
+    localStorage.total_time = parseInt(localStorage.total_time) + 1
+    
+    __minutes__ = parseInt(parseInt(localStorage.total_time) / 60)
+    __seconds__ = parseInt(parseInt(localStorage.total_time) - (__minutes__ * 60))
+    
+    if __seconds__ < 10
+      __seconds__ = '0' + String(__seconds__)
+    
+
+    $('.total_time_minutes').html __minutes__
+    $('.total_time_seconds').html __seconds__
+
+  , 1000
+  
   
 
 $('.go').click ->

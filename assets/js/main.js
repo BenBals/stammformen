@@ -290,7 +290,21 @@
       localStorage.stammpoints_wrongs = 0;
     }
     $('.stammpoints_wrongs').html(localStorage.stammpoints_wrongs);
-    return $('.stammpoints').html(localStorage.stammpoints);
+    $('.stammpoints').html(localStorage.stammpoints);
+    if (localStorage.total_time === void 0) {
+      localStorage.total_time = 0;
+    }
+    return setInterval(function() {
+      var __minutes__, __seconds__;
+      localStorage.total_time = parseInt(localStorage.total_time) + 1;
+      __minutes__ = parseInt(parseInt(localStorage.total_time) / 60);
+      __seconds__ = parseInt(parseInt(localStorage.total_time) - (__minutes__ * 60));
+      if (__seconds__ < 10) {
+        __seconds__ = '0' + String(__seconds__);
+      }
+      $('.total_time_minutes').html(__minutes__);
+      return $('.total_time_seconds').html(__seconds__);
+    }, 1000);
   });
 
   $('.go').click(function() {
