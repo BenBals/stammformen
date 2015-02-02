@@ -57,6 +57,30 @@
 .icons8-settings:before {
   content: ""; }
 
+body.dark {
+  background-color: #303030;
+  color: #FFC107; }
+
+body.dark .btn {
+  color: #FFC107;
+  border-color: #FFC107; }
+
+body.dark .input-group > input {
+  border-color: #FFC107;
+  color: #FFC107; }
+
+body.dark .settings, body.dark .info, body.dark .stats {
+  background-color: #303030;
+  color: #FFC107; }
+
+* {
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
+
+a:visited {
+  color: #21a1e1; }
+
 .active {
   color: #4CD964; }
 

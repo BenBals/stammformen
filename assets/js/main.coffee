@@ -31,6 +31,18 @@ add_wrong = (n) ->
     wrongs.push(parseInt(n))
     save_wrongs()
 
+change_theme = (name) ->
+  if name
+    localStorage.theme = name
+    $('body').attr 'class', name
+  else
+    if localStorage.theme == 'light'
+      $('body').attr 'class', 'dark'
+      localStorage.theme = 'dark'
+    else
+      $('body').attr 'class', 'light'
+      localStorage.theme = 'light'
+
 check = ->
   console.log 'lets see what you got there'
 
@@ -117,7 +129,13 @@ newQ = ->
 
   $('.input-group > input').val ''
   $('.input-group > input').removeClass "has-value"
+
   $('.input-group > input').css('border-bottom', 'solid 1px #21a1e1')
+
+  #if localStorage.theme == 'light'
+  #  $('.input-group > input').css('border-bottom', 'solid 1px #21a1e1')
+  #else if localStorage.theme == 'dark'
+  #  $('.input-group > input').css('border-bottom', 'solid 1px #FFC107')
 
 
   $('.infinitiv').addClass('pop')
@@ -199,6 +217,12 @@ $ ->
     localStorage.lektionen = ''
     for key, val of data
       add_lektion(key)
+
+
+  if localStorage.theme == undefined
+    localStorage.theme == 'light'
+
+  change_theme(localStorage.theme)
   
 
   if localStorage.stammpoints == undefined
@@ -306,6 +330,9 @@ $('.reset_wrongs').click ->
   add_lektionen()
   newQ()
 
+
+$('.change_theme').click ->
+  change_theme()
 
 $('.input-group > input').on 'keydown', (e) ->
   if e.which == 13
