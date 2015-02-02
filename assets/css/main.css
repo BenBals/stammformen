@@ -73,7 +73,7 @@ body.dark .settings, body.dark .info, body.dark .stats {
   background-color: #303030;
   color: #FFC107; }
 
-body .version {
+body.dark .version {
   color: #FFC107; }
 
 * {
