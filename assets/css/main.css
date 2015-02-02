@@ -73,6 +73,9 @@ body.dark .settings, body.dark .info, body.dark .stats {
   background-color: #303030;
   color: #FFC107; }
 
+body .version {
+  color: #FFC107; }
+
 * {
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
@@ -245,7 +248,8 @@ input {
   animation: slide-out 0.5s; }
 
 .version {
-  margin-top: 30px; }
+  margin-top: 30px;
+  color: #21a1e1; }
 
 .wrapper-more {
   margin-top: 28px; }

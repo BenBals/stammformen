@@ -1,3 +1,5 @@
+version = '0.1.2'
+
 selection = []
 lektionen = []
 currQ = {}
@@ -195,6 +197,9 @@ save_wrongs = () ->
   true
 
 $ ->
+  $('.version').html 'v' + version
+  console.log 'Stammformen by Ben Bals'
+  console.log 'Version: v' + version
   $('.start').addClass('slide-in')
   setTimeout ->
     $('.start').removeClass('slide-in')
