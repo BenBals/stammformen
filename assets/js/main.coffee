@@ -31,6 +31,10 @@ add_wrong = (n) ->
     wrongs.push(parseInt(n))
     save_wrongs()
 
+add_to_wrong = () ->
+  localStorage.stammpoints_wrongs = parseInt(localStorage.stammpoints_wrongs) + 1
+  $('.stammpoints_wrongs').html localStorage.stammpoints_wrongs
+
 change_theme = (name) ->
   if name
     localStorage.theme = name
@@ -60,6 +64,7 @@ check = ->
   else
     $('.first').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-1').html(currQ.first)
+    add_to_wrong()
 
   if __second__ == currQ.second
     $('.second').css('border-bottom', 'solid 1px #4CD964')
@@ -69,6 +74,7 @@ check = ->
   else
     $('.second').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-2').html(currQ.second)
+    add_to_wrong()
 
   if __third__ == currQ.third
     $('.third').css('border-bottom', 'solid 1px #4CD964')
@@ -78,6 +84,7 @@ check = ->
   else
     $('.third').css('border-bottom', 'solid 1px #FF3B30')
     $('.label-3').html(currQ.third)
+    add_to_wrong()
 
     if __right__ == 3
       console.log 'alles Richtig'
