@@ -35,7 +35,7 @@
     30: ['ardere, ardeo, arsi, -', 'avertere, averto, averti, aversum', 'componere, compono, composui, compositum', 'conscribere, conscribo, conscripsi, conscriptum', 'differre, differo, distuli, dilatum', 'ferre, fero, tuli, latum', 'inferre, infero, intuli, illatum', 'offerre, offero, obtuli, oblatum', 'perferre, perfero, pertuli, perlatum', 'perspicere, perspicio, perspexi, perspectum', 'praeferre, praefero, praetuli, praelatum', 'referre, refero, rettuli, relatum', 'servire, servio, servivi, servitum']
   };
 
-  version = '0.1.4';
+  version = '0.2.0';
 
   selection = [];
 
@@ -115,32 +115,32 @@
     __third__ = $('.third').val().toLowerCase().trim();
     __right__ = 0;
     if (__first__ === currQ.first) {
-      $('.first').css('border-bottom', 'solid 1px #4CD964');
+      $('.first').addClass('answer_right');
       $('.label-1').html('Richtig');
       add_points();
       __right__++;
     } else {
-      $('.first').css('border-bottom', 'solid 1px #FF3B30');
+      $('.first').addClass('answer_wrong');
       $('.label-1').html(currQ.first);
       add_to_wrong();
     }
     if (__second__ === currQ.second) {
-      $('.second').css('border-bottom', 'solid 1px #4CD964');
+      $('.second').addClass('answer_right');
       $('.label-2').html('Richtig');
       add_points();
       __right__++;
     } else {
-      $('.second').css('border-bottom', 'solid 1px #FF3B30');
+      $('.second').addClass('answer_wrong');
       $('.label-2').html(currQ.second);
       add_to_wrong();
     }
     if (__third__ === currQ.third) {
-      $('.third').css('border-bottom', 'solid 1px #4CD964');
+      $('.third').addClass('answer_right');
       $('.label-3').html('Richtig');
       add_points();
       __right__++;
     } else {
-      $('.third').css('border-bottom', 'solid 1px #FF3B30');
+      $('.third').addClass('answer_wrong');
       $('.label-3').html(currQ.third);
       add_to_wrong();
       if (__right__ === 3) {
@@ -207,7 +207,8 @@
     $('.label-3').html('Dritte Stammform');
     $('.input-group > input').val('');
     $('.input-group > input').removeClass("has-value");
-    $('.input-group > input').css('border-bottom', 'solid 1px #21a1e1');
+    $('.input-group > input').removeClass('answer_right');
+    $('.input-group > input').removeClass('answer_wrong');
     $('.infinitiv').addClass('pop');
     setTimeout(function() {
       return $('.infinitiv').removeClass('pop');
@@ -323,8 +324,9 @@
     }
     $('.stammpoints_wrongs').html(localStorage.stammpoints_wrongs);
     $('.stammpoints').html(localStorage.stammpoints);
-    if (localStorage.total_time === void 0) {
+    if (localStorage.total_time === void 0 || localStorage.total_time === "NaN") {
       localStorage.total_time = 0;
+      console.log("no total_time, setting it to " + localStorage.total_time);
     }
     return setInterval(function() {
       var __minutes__, __seconds__;
@@ -335,7 +337,10 @@
         __seconds__ = '0' + String(__seconds__);
       }
       $('.total_time_minutes').html(__minutes__);
-      return $('.total_time_seconds').html(__seconds__);
+      $('.total_time_seconds').html(__seconds__);
+      if (parseInt(localStorage.total_time) > 3600) {
+        return $('.go_crazy').fadeIn('fast');
+      }
     }, 1000);
   });
 
@@ -353,6 +358,10 @@
     return newQ();
   });
 
+  $('.go_crazy').click(function() {
+    return change_theme('crazy');
+  });
+
   $('html').click(function(e) {
     if (e.target === $('.overlay')[0]) {
       $('.settings').fadeOut('fast');
@@ -363,7 +372,6 @@
   });
 
   $('.icons8-close').click(function() {
-    console.log('click fa-times-circle');
     $('.settings').fadeOut('fast');
     $('.info').fadeOut('fast');
     $('.stats').fadeOut('fast');

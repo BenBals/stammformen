@@ -76,6 +76,180 @@ body.dark .settings, body.dark .info, body.dark .stats {
 body.dark .version {
   color: #FFC107; }
 
+body.crazy {
+  -webkit-animation: crazy_color_animation 10s infinite;
+  -moz-animation: crazy_color_animation 10s infinite;
+  animation: crazy_color_animation 10s infinite; }
+
+body.crazy .btn {
+  -webkit-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
+  -moz-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
+  animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite; }
+
+body.crazy .input-group > input {
+  -webkit-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
+  -moz-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
+  animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite; }
+
+body.crazy .settings, body.dark .info, body.dark .stats {
+  -webkit-animation: crazy_color_animation 10s infinite;
+  -moz-animation: crazy_color_animation 10s infinite;
+  animation: crazy_color_animation 10s infinite; }
+
+body.crazy .info > p, body.crazy .info > h1 {
+  -webkit-animation: crazy_color_animation 10s infinite;
+  -moz-animation: crazy_color_animation 10s infinite;
+  animation: crazy_color_animation 10s infinite; }
+
+body.crazy .version {
+  -webkit-animation: crazy_color_animation 10s infinite;
+  -moz-animation: crazy_color_animation 10s infinite;
+  animation: crazy_color_animation 10s infinite; }
+
+a.btn-line.go_crazy {
+  display: none;
+  -webkit-animation: crazy_color_animation 10s infinite;
+  -moz-animation: crazy_color_animation 10s infinite;
+  animation: crazy_color_animation 10s infinite; }
+
+@-webkit-keyframes crazy_color_animation {
+  0% {
+    color: #FFC107; }
+  10% {
+    color: #3ABEFF; }
+  20% {
+    color: #09E85E; }
+  30% {
+    color: #2DE1FC; }
+  40% {
+    color: #2AFC98; }
+  50% {
+    color: #D84797; }
+  60% {
+    color: #9D44B5; }
+  70% {
+    color: #FF3562; }
+  80% {
+    color: #FFEB3B; }
+  90% {
+    color: #001f3f; }
+  100% {
+    color: #FFC107; } }
+@-moz-keyframes crazy_color_animation {
+  0% {
+    color: #FFC107; }
+  10% {
+    color: #3ABEFF; }
+  20% {
+    color: #09E85E; }
+  30% {
+    color: #2DE1FC; }
+  40% {
+    color: #2AFC98; }
+  50% {
+    color: #D84797; }
+  60% {
+    color: #9D44B5; }
+  70% {
+    color: #FF3562; }
+  80% {
+    color: #FFEB3B; }
+  90% {
+    color: #001f3f; }
+  100% {
+    color: #FFC107; } }
+@keyframes crazy_color_animation {
+  0% {
+    color: #FFC107; }
+  10% {
+    color: #3ABEFF; }
+  20% {
+    color: #09E85E; }
+  30% {
+    color: #2DE1FC; }
+  40% {
+    color: #2AFC98; }
+  50% {
+    color: #D84797; }
+  60% {
+    color: #9D44B5; }
+  70% {
+    color: #FF3562; }
+  80% {
+    color: #FFEB3B; }
+  90% {
+    color: #001f3f; }
+  100% {
+    color: #FFC107; } }
+@-webkit-keyframes crazy_border_animation {
+  0% {
+    border-color: #FFC107; }
+  10% {
+    border-color: #3ABEFF; }
+  20% {
+    border-color: #09E85E; }
+  30% {
+    border-color: #2DE1FC; }
+  40% {
+    border-color: #2AFC98; }
+  50% {
+    border-color: #D84797; }
+  60% {
+    border-color: #9D44B5; }
+  70% {
+    border-color: #FF3562; }
+  80% {
+    border-color: #FFEB3B; }
+  90% {
+    border-color: #001f3f; }
+  100% {
+    border-color: #FFC107; } }
+@-moz-keyframes crazy_border_animation {
+  0% {
+    border-color: #FFC107; }
+  10% {
+    border-color: #3ABEFF; }
+  20% {
+    border-color: #09E85E; }
+  30% {
+    border-color: #2DE1FC; }
+  40% {
+    border-color: #2AFC98; }
+  50% {
+    border-color: #D84797; }
+  60% {
+    border-color: #9D44B5; }
+  70% {
+    border-color: #FF3562; }
+  80% {
+    border-color: #FFEB3B; }
+  90% {
+    border-color: #001f3f; }
+  100% {
+    border-color: #FFC107; } }
+@keyframes crazy_border_animation {
+  0% {
+    border-color: #FFC107; }
+  10% {
+    border-color: #3ABEFF; }
+  20% {
+    border-color: #09E85E; }
+  30% {
+    border-color: #2DE1FC; }
+  40% {
+    border-color: #2AFC98; }
+  50% {
+    border-color: #D84797; }
+  60% {
+    border-color: #9D44B5; }
+  70% {
+    border-color: #FF3562; }
+  80% {
+    border-color: #FFEB3B; }
+  90% {
+    border-color: #001f3f; }
+  100% {
+    border-color: #FFC107; } }
 * {
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
@@ -86,6 +260,12 @@ a:visited {
 
 .active {
   color: #4CD964; }
+
+.input-group input.answer_right {
+  border-color: #4CD964; }
+
+.input-group input.answer_wrong {
+  border-color: #FF3B30; }
 
 body {
   margin: 0;

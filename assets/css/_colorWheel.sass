@@ -1,0 +1,94 @@
+$crazy_amber: #FFC107
+$crazy_blue: #3ABEFF
+$crazy_green: #09E85E
+$crazy_light_blue: #2DE1FC
+$crazy_light_green: #2AFC98
+$crazy_navy: #001f3f
+$crazy_pink: #D84797
+$crazy_purple: #9D44B5
+$crazy_red: #FF3562
+$crazy_yellow: #FFEB3B
+
+// SNIPPETS =========================================
+// color animation:
+//    +animation(crazy_color_animation 10s infinite)
+// SNIPPETS =========================================
+
+=crazy_color_animation_mixin
+  +animation(crazy_color_animation 10s infinite)
+=crazy_border_animation_mixin
+  +animation(crazy_border_animation 10s infinite)
+=crazy_color_border_animation_mixin
+  +animation(crazy_border_animation 10s infinite, crazy_color_animation 10s infinite)
+
+
+body.crazy
+  +crazy_color_animation_mixin
+
+body.crazy .btn
+  +crazy_color_border_animation_mixin
+
+body.crazy .input-group > input
+  +crazy_color_border_animation_mixin
+
+body.crazy .settings, body.dark .info, body.dark .stats
+  // background-color: $dark_background
+  +crazy_color_animation_mixin
+
+body.crazy .info > p, body.crazy .info > h1
+  +crazy_color_animation_mixin
+
+body.crazy .version
+  +crazy_color_animation_mixin
+
+a.btn-line.go_crazy
+  display: none
+  +crazy_color_animation_mixin
+
++keyframes(crazy_color_animation)
+  0%
+    color: $crazy_amber
+  10%
+    color: $crazy_blue
+  20%
+    color: $crazy_green
+  30%
+    color: $crazy_light_blue
+  40%
+    color: $crazy_light_green
+  50%
+    color: $crazy_pink
+  60%
+    color: $crazy_purple
+  70%
+    color: $crazy_red
+  80%
+    color: $crazy_yellow
+  90%
+    color: $crazy_navy
+  100%
+    color: $crazy_amber
+
++keyframes(crazy_border_animation)
+  0%
+    border-color: $crazy_amber
+  10%
+    border-color: $crazy_blue
+  20%
+    border-color: $crazy_green
+  30%
+    border-color: $crazy_light_blue
+  40%
+    border-color: $crazy_light_green
+  50%
+    border-color: $crazy_pink
+  60%
+    border-color: $crazy_purple
+  70%
+    border-color: $crazy_red
+  80%
+    border-color: $crazy_yellow
+  90%
+    border-color: $crazy_navy
+  100%
+    border-color: $crazy_amber
