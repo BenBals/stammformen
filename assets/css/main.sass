@@ -15,10 +15,10 @@ a:visited
   color: #4CD964
 
 .input-group input.answer_right
-  border-color: #4CD964
+  border-color: #4CD964 !important
 
 .input-group input.answer_wrong
-  border-color: #FF3B30
+  border-color: #FF3B30 !important
 
 body
   margin: 0
@@ -26,6 +26,7 @@ body
   font-family: 'Oxygen', Sans-Serif
   color: rgba(0,0 ,0 , 0.64)
   font-weight: thin
+
 
 .btn
   color: $blue
@@ -77,11 +78,11 @@ body
 .inactive
   color: #FF3B30
 
-.infinitiv
-  margin-top: 40px
+.infinitiv-wrapper
+  padding-top: 15px
 
 .icon-wrapper
-  margin: 10px 0px
+  padding-top: 20px
 
 input
   +transition(all .5s ease-in-out)
@@ -148,6 +149,23 @@ input
   left: 0
   background-color: #000
   opacity: .5
+  overflow: hidden
+
+.pointsbar
+  height: 3vh
+  width: 50%
+  display: inline-block
+  margin-bottom: 20px
+  color: white
+  +transition(width 2s)
+
+.pointsbar_right
+  background-color: #4CD964
+  float: left
+
+.pointsbar_wrong
+  background-color: #FF3B30
+  float: right
 
 .pop
   +animation(pop .3s ease-in-out)

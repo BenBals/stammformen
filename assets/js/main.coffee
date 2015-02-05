@@ -1,10 +1,12 @@
-version = '0.2.1'
+version = '0.2.5'
 
 selection = []
 lektionen = []
 currQ = {}
 wrongs = []
 all_data = []
+n_rights = 0
+n_wrongs = 0
 
 random = (from, to) -> Math.floor((Math.random()*to)+from)
 
@@ -63,41 +65,48 @@ check = ->
     $('.label-1').html('Richtig')
     add_points()
     __right__++
+    n_rights++
   else
     $('.first').addClass('answer_wrong')
     $('.label-1').html(currQ.first)
     add_to_wrong()
+    n_wrongs++
 
   if __second__ == currQ.second
     $('.second').addClass('answer_right')
     $('.label-2').html('Richtig')
     add_points()
     __right__++
+    n_rights++
   else
     $('.second').addClass('answer_wrong')
     $('.label-2').html(currQ.second)
     add_to_wrong()
+    n_wrongs++
 
   if __third__ == currQ.third
     $('.third').addClass('answer_right')
     $('.label-3').html('Richtig')
     add_points()
     __right__++
+    n_rights++
   else
     $('.third').addClass('answer_wrong')
     $('.label-3').html(currQ.third)
     add_to_wrong()
+    n_wrongs++
 
-    if __right__ == 3
-      console.log 'alles Richtig'
-      remove_wrong(all_data.indexOf(currQ.raw))
-    else
-      add_wrong(all_data.indexOf(currQ.raw))
+  if __right__ == 3
+    remove_wrong(all_data.indexOf(currQ.raw))
+  else
+    add_wrong(all_data.indexOf(currQ.raw))
 
   setTimeout ->
     $(".first").focus()
     newQ()
   , 5000
+
+  set_pointsbars()
 
 learn_wrongs = () ->
   selection = []
@@ -263,11 +272,27 @@ $ ->
     $('.total_time_seconds').html __seconds__
 
     if parseInt(localStorage.total_time) > 3600
-      $('.go_crazy').fadeIn('fast')
+      $('.go_crazy').css 'fast'
     
 
   , 1000
   
+
+set_pointsbars = ->
+  $('.rights').html n_rights
+  $('.wrongs').html n_wrongs
+
+  if n_wrongs == 0 and n_rights == 0
+    __right_percentage__ = 50
+    __wrong_percentage__ = 50
+  else
+    __right_percentage__ = parseInt(n_rights / (n_rights + n_wrongs) * 100)
+    __wrong_percentage__ = 100 - __right_percentage__
+    $('.pointsbar_text').css 'display', 'none'
+
+  $('.pointsbar_right').css('width', __right_percentage__ + "%")
+  $('.pointsbar_wrong').css('width', __wrong_percentage__ + "%")
+
   
 
 $('.go').click ->
@@ -282,6 +307,7 @@ $('.go').click ->
     , 500
   , 500
   newQ()
+  set_pointsbars()
 
 $('.go_crazy').click ->
   change_theme('crazy')
