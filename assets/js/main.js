@@ -35,7 +35,7 @@
     30: ['ardere, ardeo, arsi, -', 'avertere, averto, averti, aversum', 'componere, compono, composui, compositum', 'conscribere, conscribo, conscripsi, conscriptum', 'differre, differo, distuli, dilatum', 'ferre, fero, tuli, latum', 'inferre, infero, intuli, illatum', 'offerre, offero, obtuli, oblatum', 'perferre, perfero, pertuli, perlatum', 'perspicere, perspicio, perspexi, perspectum', 'praeferre, praefero, praetuli, praelatum', 'referre, refero, rettuli, relatum', 'servire, servio, servivi, servitum']
   };
 
-  version = '0.2.0';
+  version = '0.2.1';
 
   selection = [];
 
