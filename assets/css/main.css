@@ -91,7 +91,7 @@ body.crazy .input-group > input {
   -moz-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
   animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite; }
 
-body.crazy .settings, body.dark .info, body.dark .stats {
+body.crazy .settings, body.crazy .info, body.crazy .stats {
   -webkit-animation: crazy_color_animation 10s infinite;
   -moz-animation: crazy_color_animation 10s infinite;
   animation: crazy_color_animation 10s infinite; }
