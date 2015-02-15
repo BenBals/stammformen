@@ -225,6 +225,7 @@ $ ->
 
   for key, val of data
     all_data = all_data.concat val
+  console.log(all_data)
 
   if localStorage.wrongs == undefined
     localStorage.wrongs = ''
@@ -246,7 +247,7 @@ $ ->
     localStorage.theme == 'light'
 
   change_theme(localStorage.theme)
-  
+
 
   if localStorage.stammpoints == undefined
     localStorage.stammpoints = 0
@@ -260,23 +261,23 @@ $ ->
 
   setInterval ->
     localStorage.total_time = parseInt(localStorage.total_time) + 1
-    
+
     __minutes__ = parseInt(parseInt(localStorage.total_time) / 60)
     __seconds__ = parseInt(parseInt(localStorage.total_time) - (__minutes__ * 60))
-    
+
     if __seconds__ < 10
       __seconds__ = '0' + String(__seconds__)
-    
+
 
     $('.total_time_minutes').html __minutes__
     $('.total_time_seconds').html __seconds__
 
     if parseInt(localStorage.total_time) > 3600
-      $('.go_crazy').css 'fast'
-    
+      $('.go_crazy').fadeIn 'fast'
+
 
   , 1000
-  
+
 
 set_pointsbars = ->
   $('.rights').html n_rights
@@ -293,7 +294,7 @@ set_pointsbars = ->
   $('.pointsbar_right').css('width', __right_percentage__ + "%")
   $('.pointsbar_wrong').css('width', __wrong_percentage__ + "%")
 
-  
+
 
 $('.go').click ->
   $('.start').addClass 'slide-out'
@@ -317,12 +318,14 @@ $('html').click (e) ->
     $('.settings').fadeOut 'fast'
     $('.info').fadeOut 'fast'
     $('.stats').fadeOut 'fast'
+    $('.achievements').fadeOut 'fast'
     $('.overlay').fadeOut 'fast'
 
 $('.icons8-close').click ->
   $('.settings').fadeOut 'fast'
   $('.info').fadeOut 'fast'
   $('.stats').fadeOut 'fast'
+  $('.achievements').fadeOut 'fast'
   $('.overlay').fadeOut 'fast'
 
 $('.icons8-settings, .btn-settings').click ->
@@ -336,7 +339,7 @@ $('.icons8-settings, .btn-settings').click ->
   else
     $('.learn_wrongs').css 'display', 'block'
     $('.reset_wrongs').css 'display', 'block'
-  
+
   $('.lektionen').html ''
 
   for key, val of data
@@ -349,13 +352,13 @@ $('.icons8-settings, .btn-settings').click ->
   li_listeners()
 
 $('.icons8-info').click ->
-  $('.info').fadeIn('fast')
-  $('.overlay').fadeIn('fast')
-  
+  $('.info').fadeIn 'fast'
+  $('.overlay').fadeIn 'fast'
+
 
 $('.icons8-line_chart').click ->
-  $('.stats').fadeIn('fast')
-  $('.overlay').fadeIn('fast')
+  $('.stats').fadeIn 'fast'
+  $('.overlay').fadeIn 'fast'
 
 $('.learn_wrongs').click ->
   $('.normal').fadeOut()
@@ -377,6 +380,9 @@ $('.reset_wrongs').click ->
   add_lektionen()
   newQ()
 
+$('.icons8-diploma').click ->
+  $('.achievements').fadeIn 'fast'
+  $('.overlay').fadeIn 'fast'
 
 $('.change_theme').click ->
   change_theme()

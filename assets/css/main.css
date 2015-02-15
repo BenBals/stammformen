@@ -72,7 +72,7 @@ body.dark .input-group > input {
   border-color: #FFC107;
   color: #FFC107; }
 
-body.dark .settings, body.dark .info, body.dark .stats {
+body.dark .settings, body.dark .info, body.dark .stats, body.dark .achievements {
   background-color: #303030;
   color: #FFC107; }
 
@@ -94,7 +94,7 @@ body.crazy .input-group > input {
   -moz-animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite;
   animation: crazy_border_animation 10s infinite, crazy_color_animation 10s infinite; }
 
-body.crazy .settings, body.crazy .info, body.crazy .stats {
+body.crazy .settings, body.crazy .info, body.crazy .stats, body.crazy .achievements {
   -webkit-animation: crazy_color_animation 10s infinite;
   -moz-animation: crazy_color_animation 10s infinite;
   animation: crazy_color_animation 10s infinite; }
@@ -273,7 +273,7 @@ a:visited {
 body {
   margin: 0;
   text-align: center;
-  font-family: "Oxygen", Sans-Serif;
+  font-family: "Oxygen", "Helvetica Neue", "Helvetica", Sans-Serif;
   color: rgba(0, 0, 0, 0.64);
   font-weight: thin; }
 
@@ -311,6 +311,33 @@ body {
   margin: 5px 0px; }
   .btn-line:hover {
     cursor: pointer; }
+
+.card {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.16);
+  color: rgba(0, 0, 0, 0.3); }
+  .card .icon {
+    height: 41px;
+    width: 41px;
+    float: left;
+    font-size: 2em;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px; }
+
+.card.got {
+  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.64); }
+  .card.got .icon {
+    border-color: rgba(0, 0, 0, 0.64); }
+
+.cards {
+  display: flex;
+  width: auto;
+  flex-wrap: wrap; }
 
 .dpn {
   display: none; }
@@ -422,7 +449,7 @@ input {
   -moz-animation: pop 0.3s ease-in-out;
   animation: pop 0.3s ease-in-out; }
 
-.settings, .info, .stats {
+.settings, .info, .stats, .achievements {
   background-color: white;
   color: #21a1e1;
   position: fixed;
