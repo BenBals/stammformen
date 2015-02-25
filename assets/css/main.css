@@ -265,10 +265,12 @@ a:visited {
   color: #4CD964; }
 
 .input-group input.answer_right {
-  border-color: #4CD964 !important; }
+  border-color: #4CD964 !important;
+  animation-delay: 100s; }
 
 .input-group input.answer_wrong {
-  border-color: #FF3B30 !important; }
+  border-color: #FF3B30 !important;
+  animation-delay: 100s; }
 
 body {
   margin: 0;
